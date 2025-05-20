@@ -6,7 +6,7 @@
   <meta name="description" content="Use our free online EMI calculator to calculate your multiple loan EMIs with detailed breakdown and user feedback options." />
   <meta name="keywords" content="EMI Calculator, Loan Calculator, Multiple EMI, Finance Tools, Loan Management" />
   <meta name="author" content="Your Name" />
-  <title>Multiple EMI Calculator - Free Online Loan EMI Tool</title>
+  <title>EMI Calculator - Free Online Loan EMI Tool</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
@@ -91,7 +91,7 @@
 </head>
 <body>
   <header>
-    <h1>Multiple EMI Calculator</h1>
+    <h1>EMI Calculator</h1>
     <p>Calculate EMIs for multiple loans easily and accurately.</p>
   </header>
 
@@ -164,7 +164,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Multiple EMI Calculator. All rights reserved.</p>
+    <p>&copy; 2025 EMI Calculator. All rights reserved.</p>
   </footer>
 
   <script>
