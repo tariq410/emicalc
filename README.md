@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Use our free online EMI calculator to calculate your multiple loan EMIs with detailed breakdown and user feedback options." />
-  <meta name="keywords" content="EMI Calculator, Loan Calculator, Multiple EMI, Finance Tools, Loan Management" />
+  <meta name="description" content="Use our free online Reducing Balance EMI Calculator to calculate monthly loan payments with detailed amortization breakdown." />
+  <meta name="keywords" content="Reducing EMI Calculator, Loan Calculator, EMI Schedule, Amortization Table, Finance Tool" />
   <meta name="author" content="Your Name" />
-  <title>EMI Calculator - Free Online Loan EMI Tool</title>
+  <title>Reducing Balance EMI Calculator</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
@@ -91,8 +91,8 @@
 </head>
 <body>
   <header>
-    <h1>EMI Calculator</h1>
-    <p>Calculate EMIs for multiple loans easily and accurately.</p>
+    <h1>Reducing Balance EMI Calculator</h1>
+    <p>Calculate monthly EMIs with detailed principal and interest breakdown.</p>
   </header>
 
   <main>
@@ -110,7 +110,7 @@
     </section>
 
     <section class="emi-section">
-      <h2>Loan EMI Calculator</h2>
+      <h2>Reducing EMI Calculator</h2>
       <form id="emiForm" class="emi-inputs">
         <label for="amount">Loan Amount (₹):</label>
         <input type="number" id="amount" min="0" required />
@@ -164,7 +164,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 EMI Calculator. All rights reserved.</p>
+    <p>&copy; 2025 Reducing EMI Calculator. All rights reserved.</p>
   </footer>
 
   <script>
