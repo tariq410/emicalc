@@ -74,6 +74,19 @@
         flex-direction: column;
       }
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
   </style>
 </head>
 <body>
@@ -162,7 +175,7 @@
       const tenure = parseInt(document.getElementById('tenure').value);
 
       if (amount <= 0 || interest < 0 || tenure <= 0) {
-        document.getElementById('result').innerText = "Please enter valid positive values for all fields.";
+        document.getElementById('result').innerHTML = "<p style='color:red;'>Please enter valid positive values for all fields.</p>";
         return;
       }
 
@@ -170,7 +183,47 @@
       const emi = (amount * monthlyInterest * Math.pow(1 + monthlyInterest, tenure)) /
                   (Math.pow(1 + monthlyInterest, tenure) - 1);
 
-      document.getElementById('result').innerText = `Your Monthly EMI is ₹${emi.toFixed(2)}`;
+      let remainingPrincipal = amount;
+      let totalInterest = 0;
+      let amortization = `
+        <h3>EMI Breakdown</h3>
+        <p><strong>Monthly EMI:</strong> ₹${emi.toFixed(2)}</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Principal Paid (₹)</th>
+              <th>Interest Paid (₹)</th>
+              <th>Remaining Balance (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      for (let month = 1; month <= tenure; month++) {
+        const interestPaid = remainingPrincipal * monthlyInterest;
+        const principalPaid = emi - interestPaid;
+        remainingPrincipal -= principalPaid;
+        totalInterest += interestPaid;
+
+        amortization += `
+          <tr>
+            <td>${month}</td>
+            <td>${principalPaid.toFixed(2)}</td>
+            <td>${interestPaid.toFixed(2)}</td>
+            <td>${remainingPrincipal > 0 ? remainingPrincipal.toFixed(2) : '0.00'}</td>
+          </tr>
+        `;
+      }
+
+      amortization += `
+          </tbody>
+        </table>
+        <p><strong>Total Interest Paid:</strong> ₹${totalInterest.toFixed(2)}</p>
+        <p><strong>Total Amount Paid:</strong> ₹${(emi * tenure).toFixed(2)}</p>
+      `;
+
+      document.getElementById('result').innerHTML = amortization;
     });
 
     function submitFeedback() {
